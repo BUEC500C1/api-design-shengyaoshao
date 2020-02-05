@@ -5,10 +5,10 @@ import urllib.request
 from google.cloud import vision
 from google.cloud.vision import types
 
-consumer_key =
-consumer_secret =
-access_key =
-access_secret =
+consumer_key = 'sdaw'
+consumer_secret = 'wqer'
+access_key = 'acxc'
+access_secret = 'saqwe'
 
 def get_all_tweets(account):
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
