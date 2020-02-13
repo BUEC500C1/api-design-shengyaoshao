@@ -55,8 +55,8 @@ def get_all_tweets(account1,number1):
         imagenum = fileorder - 1
         print(str(imagenum)+'images detected')
         return fileorder
-def googlevision():
-        f = get_all_tweets()
+def googlevision(account,number):
+        f = get_all_tweets(account,number)
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'TweetImage-ef41c01d2f34.json'
         client = vision.ImageAnnotatorClient()
         path = r'C:\Users\Vanquish\Desktop\pyve\VisionApi\downloadimage'
@@ -108,4 +108,4 @@ def googlevision():
                                         response.error.message))
                 file_name += 1
 if __name__ == '__main__':
-        googlevision(@OnePlusUSA,10)
+        googlevision('@OnePlusUSA',10)
