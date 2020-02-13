@@ -108,4 +108,4 @@ def googlevision():
                                         response.error.message))
                 file_name += 1
 if __name__ == '__main__':
-        googlevision()
+        googlevision(@OnePlusUSA,10)
