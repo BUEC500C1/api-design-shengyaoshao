@@ -10,15 +10,13 @@ consumer_secret = 'asdasd'
 access_key = 'asdasd'
 access_secret = 'asdasd'
 
-def get_all_tweets():
+def get_all_tweets(account1,number1):
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tweepy.API(auth)
         alltweets = []
-        print("enter the name of the twitter account")
-        account = input()
-        print("How many tweets you would like to scan, you can scan as many as 200")
-        number = input()
+        account = account1
+        number = number1
         while (int(number) > 200):
                 print('The number you entered is biger than 200, please enter a number less than 200')
                 number = input()
@@ -57,7 +55,8 @@ def get_all_tweets():
         imagenum = fileorder - 1
         print(str(imagenum)+'images detected')
         return fileorder
-def googlevision(f):
+def googlevision():
+        f = get_all_tweets()
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'TweetImage-ef41c01d2f34.json'
         client = vision.ImageAnnotatorClient()
         path = r'C:\Users\Vanquish\Desktop\pyve\VisionApi\downloadimage'
@@ -109,5 +108,4 @@ def googlevision(f):
                                         response.error.message))
                 file_name += 1
 if __name__ == '__main__':
-        f = get_all_tweets()
-        googlevision(f)
+        googlevision()
